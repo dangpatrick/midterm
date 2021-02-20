@@ -13,11 +13,10 @@ $f3 = Base::instance();
 $f3->set('Debug',3);
 
 //Define a default route (home page)
-$f3->route('GET /survey', function()
+$f3->route('GET /', function()
 {
-    echo 'this is my default survey route';
-//    $view = new Template();
-//    echo $view->render('views/home.html');
+    $view = new Template();
+    echo $view->render('views/home.html');
 });
 
 
