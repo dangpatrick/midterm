@@ -43,7 +43,7 @@ $f3->route('GET|POST /survey', function($f3) {
         }
         //Data is not valid -> Set an error in F3 hive
         else {
-            $f3->set('errors["name"]', "Name cannot be blank");
+            $f3->set('errors["name"]', "You must enter a name to continue");
         }
         if(isset($_POST['options'])) {
             $userOptions = $_POST['options'];
@@ -52,12 +52,12 @@ $f3->route('GET|POST /survey', function($f3) {
                 $_SESSION['options'] = implode(", ", $userOptions);
             }
             else {
-                $f3->set('errors["options"]', "screw off!");
+                $f3->set('errors["options"]', "go away!");
             }
 
         }
         else {
-            $f3->set('errors["options"]', "select option");
+            $f3->set('errors["options"]', "You need to select at least one option to continue");
 
         }
 

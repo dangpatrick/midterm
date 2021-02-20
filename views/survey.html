@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>survey</title>
+    <link rel="stylesheet" href="../styles/styles.css">
 </head>
 <body>
 <div class="container">
@@ -19,7 +20,7 @@
         </div>
 
 
-        <check if="{{ @errors['options'] }}"><span>{{ @errors['options'] }}</span></check>
+        <check if="{{ @errors['options'] }}"><span class="err">{{ @errors['options'] }}</span></check>
         <div class="form-group">
             <label class="col-sm-2 control-label">Select options</label>
             <div class="col-sm-4">
