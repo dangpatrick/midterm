@@ -5,18 +5,36 @@
     <title>survey</title>
 </head>
 <body>
-<h1>Midterm Survey</h1>
-    <form action="order2" method="post">
-        <!-- get name -->
+<div class="container">
+    <h1>Midterm Survey</h1>
+    <form method="post" action="#">
+
         <div class="form-group">
-            <div>
-                <label for="name" class="col-sm-2 control-label">Name</label>
-                <input class="form-control" type="text" name="name" id="name" >
-                <br>
-            </div>
+            <label>Enter your name:
+                <input type="text" name ="name" value="{{ @userName }}">
+                <check if="{{ isset(@errors['name']) }}">
+                    {{ @errors['name'] }}
+                </check>
+            </label>
         </div>
 
 
+        <check if="{{ @errors['options'] }}"><span>{{ @errors['options'] }}</span></check>
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Select options</label>
+            <div class="col-sm-4">
+                <div class="col-sm-4">
+                    <repeat group="{{ @options }}" value="{{ @options }}">
+                        <label><input type="checkbox"
+                                      name="options[]"
+                                      value="{{ @options }}"> {{ ucfirst(@options) }}</label><br>
+                    </repeat>
+                </div>
+            </div>
+        </div>
+
+        <input type="submit" value="Submit">
     </form>
+</div>
 </body>
 </html>
