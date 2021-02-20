@@ -1,0 +1,12 @@
+{
+  "name": "dangpatrick/328/midterm",
+  "authors": [
+    {
+      "name": "Patrick Dang",
+      "email": "pdang2@mail.greenriver.edu"
+    }
+  ],
+  "require": {
+    "bcosca/fatfree-core": "dev-master"
+  }
+}
